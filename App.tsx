@@ -44,9 +44,9 @@ function App() {
 
   const handleNavigationStateChange = (newState) => {
     // Store the current URL in the history when the navigation state changes
-    if(newState.url==='https://ca.nativeappsai.com/1/list'){
+    if(newState.url==='https://ca.nativeappsai.com/2/list'){
       setVisitedUrls([])
-    }else if(newState.url==='https://ca.nativeappsai.com/1/landing'){
+    }else if(newState.url==='https://ca.nativeappsai.com/2/landing'){
       setVisitedUrls([])
     }{
       setVisitedUrls((prevUrls) => [...prevUrls, newState.url]);
