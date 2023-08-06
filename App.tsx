@@ -44,11 +44,10 @@ function App() {
 
   const handleNavigationStateChange = (newState) => {
     // Store the current URL in the history when the navigation state changes
-    if(newState.url==='https://ca.nativeappsai.com/2/list'){
-      setVisitedUrls([])
-    }else if(newState.url==='https://ca.nativeappsai.com/2/landing'){
-      setVisitedUrls([])
-    }{
+    if(newState.url==='https://ca.nativeappsai.com/2/list' || newState.url==='https://ca.nativeappsai.com/2/signup'){
+      setVisitedUrls([newState.url])
+    }
+    else{
       setVisitedUrls((prevUrls) => [...prevUrls, newState.url]);
     }
   };
@@ -58,7 +57,7 @@ function App() {
       <View style={styles.main}>
         <WebView
           ref={webViewRef}
-          source={{ uri: 'https://ca.nativeappsai.com/1/list' }} 
+          source={{ uri: 'https://ca.nativeappsai.com/2/list' }} 
           style={{ flex: 1, marginHorizontal: 2}} 
           bounces={false}
           onMessage={(event) => {}}
